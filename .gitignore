@@ -1,0 +1,25 @@
+*target*
+*.jar
+*.war
+*.ear
+*.class
+.DS_Store
+
+# eclipse specific git ignore
+.project
+.metadata
+.factorypath
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# IntelliJ specific git ignore
+.idea/
