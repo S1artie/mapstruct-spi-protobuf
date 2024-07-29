@@ -12,6 +12,13 @@
     <artifactId>mapstruct-spi-protobuf</artifactId>
 
     <name>Mapstruct SPI extension for mapping protobuf to Java data structures</name>
+    <url>https://github.com/S1artie/mapstruct-spi-protobuf</url>
+    <scm>
+        <url>https://github.com/S1artie/mapstruct-spi-protobuf</url>
+        <connection>scm:git:git@github.com:S1artie/mapstruct-spi-protobuf.git</connection>
+        <developerConnection>scm:git:ssh://github.com:S1artie/mapstruct-spi-protobuf.git
+        </developerConnection>
+    </scm>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
