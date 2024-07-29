@@ -11,6 +11,8 @@
 
     <artifactId>mapstruct-spi-protobuf</artifactId>
 
+    <name>Mapstruct SPI extension for mapping protobuf to Java data structures</name>
+
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
