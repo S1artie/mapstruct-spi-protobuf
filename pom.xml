@@ -5,12 +5,12 @@
 
     <groupId>de.firehead</groupId>
     <artifactId>mapstruct-spi-protobuf-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
-    <name>Mapstruct SPI extension for mapping between protobuf and org.immutables</name>
+    <name>Mapstruct SPI extension for mapping protobuf to Java data structures</name>
     <description>This Mapstruct SPI extension allows to perform seamless Mapstruct mapper generation to map between
-        protobuf and an org.immutables based data structures.
+        protobuf and Java (POJOs, immutables, records) data structures.
     </description>
     <url>https://github.com/S1artie/mapstruct-spi-protobuf</url>
 
