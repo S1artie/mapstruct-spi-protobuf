@@ -6,7 +6,7 @@
     <parent>
         <groupId>de.firehead</groupId>
         <artifactId>mapstruct-spi-protobuf-parent</artifactId>
-        <version>1.0.1-SNAPSHOT</version>
+        <version>1.0.1</version>
     </parent>
 
     <artifactId>mapstruct-spi-protobuf-test-pojo</artifactId>
