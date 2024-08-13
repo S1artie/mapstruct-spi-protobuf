@@ -6,12 +6,12 @@
     <parent>
         <groupId>de.firehead</groupId>
         <artifactId>mapstruct-spi-protobuf-parent</artifactId>
-        <version>1.0.2-SNAPSHOT</version>
+        <version>1.1.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>mapstruct-spi-protobuf</artifactId>
 
-    <name>Mapstruct SPI extension for mapping protobuf to Java data structures</name>
+    <name>Mapstruct SPI for Protobuf Mapping</name>
     <url>https://github.com/S1artie/mapstruct-spi-protobuf</url>
     <scm>
         <url>https://github.com/S1artie/mapstruct-spi-protobuf</url>
@@ -37,6 +37,19 @@
             <version>${mapstruct.version}</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <!-- No annotation processing - we need mapstruct-processor to compile for the SPI classes, but
+                         do not want to have the Mapstruct annotation processor executed.-->
+                    <compilerArgument>-proc:none</compilerArgument>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <profiles>
         <profile>

@@ -4,6 +4,7 @@
 *.ear
 *.class
 .DS_Store
+.java-version
 
 # eclipse specific git ignore
 .project

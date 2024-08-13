@@ -6,9 +6,10 @@
     <parent>
         <groupId>de.firehead</groupId>
         <artifactId>mapstruct-spi-protobuf-parent</artifactId>
-        <version>1.0.2-SNAPSHOT</version>
+        <version>1.1.0-SNAPSHOT</version>
     </parent>
 
+    <name>Mapstruct SPI for Protobuf Mapping [Test: Protos to Immutables]</name>
     <artifactId>mapstruct-spi-protobuf-test-immutables</artifactId>
 
     <properties>
@@ -56,30 +57,6 @@
         </extensions>
 
         <plugins>
-            <!-- Generate protobuf Java classes during compile phase -->
-            <plugin>
-                <groupId>dev.cookiecode</groupId>
-                <artifactId>another-protobuf-maven-plugin</artifactId>
-                <version>2.1.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>compile</goal>
-                            <goal>compile-custom</goal>
-                        </goals>
-                        <phase>generate-sources</phase>
-                        <configuration>
-                            <protocArtifact>
-                                com.google.protobuf:protoc:${protobuf.version}:exe:${os.detected.classifier}
-                            </protocArtifact>
-                            <pluginId>grpc-java</pluginId>
-                            <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}
-                            </pluginArtifact>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

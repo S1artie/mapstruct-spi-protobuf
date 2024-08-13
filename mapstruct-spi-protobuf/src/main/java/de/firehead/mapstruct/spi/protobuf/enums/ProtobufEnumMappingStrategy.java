@@ -7,8 +7,10 @@
  */
 package de.firehead.mapstruct.spi.protobuf.enums;
 
+import de.firehead.mapstruct.spi.protobuf.options.ProtobufAdditionalSupportedOptionsProvider;
 import org.mapstruct.MappingConstants;
 import org.mapstruct.ap.spi.DefaultEnumMappingStrategy;
+import org.mapstruct.ap.spi.MapStructProcessingEnvironment;
 
 import javax.lang.model.element.TypeElement;
 import javax.lang.model.type.TypeMirror;
@@ -19,6 +21,18 @@ import javax.lang.model.type.TypeMirror;
  * @author Rene Schneider
  */
 public class ProtobufEnumMappingStrategy extends DefaultEnumMappingStrategy {
+
+    /**
+     * Whether to automatically map the UNRECOGNIZED enum value to null.
+     */
+    private boolean mapUnrecognizedToNull = true;
+
+    @Override
+    public void init(MapStructProcessingEnvironment aProcessingEnvironment) {
+        super.init(aProcessingEnvironment);
+
+        mapUnrecognizedToNull = Boolean.parseBoolean(aProcessingEnvironment.getOptions().getOrDefault(ProtobufAdditionalSupportedOptionsProvider.MAP_UNRECOGNIZED_TO_NULL, Boolean.TRUE.toString()));
+    }
 
     /**
      * The postfix used for the default value (if enum is unset).
@@ -47,8 +61,12 @@ public class ProtobufEnumMappingStrategy extends DefaultEnumMappingStrategy {
                 return getDefaultNullEnumConstant(anEnumType);
             }
             final String enumWithoutNamePrefix = removeEnumNamePrefixFromValueIfPossible(anEnumType, aSourceEnumValue);
-            if (UNPARSEABLE_ENUM_CONSTANT.equals(aSourceEnumValue)
-                    || DEFAULT_ENUM_POSTFIX.equals(enumWithoutNamePrefix)) {
+            if (UNPARSEABLE_ENUM_CONSTANT.equals(aSourceEnumValue)) {
+                if (mapUnrecognizedToNull) {
+                    return MappingConstants.NULL;
+                }
+            }
+            if (DEFAULT_ENUM_POSTFIX.equals(enumWithoutNamePrefix)) {
                 return MappingConstants.NULL;
             }
             return enumWithoutNamePrefix;
