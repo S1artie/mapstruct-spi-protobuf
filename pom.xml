@@ -10,7 +10,7 @@
 
     <name>Mapstruct SPI for Protobuf Mapping [Parent]</name>
     <description>This Mapstruct SPI extension allows to perform seamless Mapstruct mapper generation to map between
-        protobuf and Java (POJOs, immutables, records) data structures.
+        protobuf and Java (POJOs, immutables, records, other protos) data structures.
     </description>
     <url>https://github.com/S1artie/mapstruct-spi-protobuf</url>
 

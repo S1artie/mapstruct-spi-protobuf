@@ -6,7 +6,7 @@ buffer messages (in the form of protobuf-java objects) to the following targets:
 - Plain Old Java Objects (POJOs)
 - [Immutables](https://immutables.github.io/) value objects
 - Java records
-- other protobuf messages in the form of other protobuf-java objects
+- other protobuf messages in the form of other protobuf-java objects (see caveat below!)
 
 Unit tests exist to validate all of these mappings. The SPI implementation requires **Mapstruct 1.6.0**
 and Java 1.8+ (of course if you want to map to records, Java 14+ is required).
