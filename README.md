@@ -7,7 +7,8 @@ This project provides a SPI implementation for [Mapstruct](http://mapstruct.org/
 buffer messages (in the form of protobuf-java objects) to the following targets:
 
 - Plain Old Java Objects (POJOs)
-- [Immutables](https://immutables.github.io/) value objects
+- [Immutables](https://immutables.github.io/) value objects (presence of org.immutables:value dependency at generation
+  time enables Immutables compatibility!)
 - Java records
 - other protobuf messages in the form of other protobuf-java objects (see caveat below!)
 
