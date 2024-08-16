@@ -1,5 +1,9 @@
 # Mapstruct SPI implementation for protocol buffers mapping
 
+![Maven Central Version](https://img.shields.io/maven-central/v/de.firehead/mapstruct-spi-protobuf)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/S1artie/mapstruct-spi-protobuf/maven.yml)
+
+
 This project provides a SPI implementation for [Mapstruct](http://mapstruct.org/) to generate mapping code from protocol
 buffer messages (in the form of protobuf-java objects) to the following targets:
 
@@ -39,7 +43,7 @@ Include the mapstruct dependency and the annotation processor in your Maven proj
     <dependency>
         <groupId>org.mapstruct</groupId>
         <artifactId>mapstruct</artifactId>
-        <version>${org.mapstruct.version}</version>
+        <version>1.6.0</version>
     </dependency>
 </dependencies>
 
@@ -66,8 +70,8 @@ Or for Gradle:
 
 ```java
 
-implementation"org.mapstruct:mapstruct:${mapstructVersion}"
-annotationProcessor"org.mapstruct:mapstruct-processor:${mapstructVersion}"
+implementation"org.mapstruct:mapstruct:1.6.0"
+annotationProcessor"org.mapstruct:mapstruct-processor:1.6.0"
 annotationProcessor"de.firehead:mapstruct-spi-protobuf:1.1.0"
 
 ```
