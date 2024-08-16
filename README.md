@@ -3,8 +3,6 @@
 ![Maven Central Version](https://img.shields.io/maven-central/v/de.firehead/mapstruct-spi-protobuf?link=https%3A%2F%2Fsearch.maven.org%2Fartifact%2Fde.firehead%2Fmapstruct-spi-protobuf)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/S1artie/mapstruct-spi-protobuf/maven.yml?link=https%3A%2F%2Fgithub.com%2FS1artie%2Fmapstruct-spi-protobuf%2Factions)
 
-
-
 This project provides a SPI implementation for [Mapstruct](http://mapstruct.org/) to generate mapping code from protocol
 buffer messages (in the form of protobuf-java objects) to the following targets:
 
@@ -15,6 +13,8 @@ buffer messages (in the form of protobuf-java objects) to the following targets:
 
 Unit tests exist to validate all of these mappings. The SPI implementation requires **Mapstruct 1.6.0**
 and Java 1.8+ (of course if you want to map to records, Java 14+ is required).
+
+This SPI implementation is released under the MIT license, built on GitHub and available on [Maven Central](https://search.maven.org/artifact/de.firehead/mapstruct-spi-protobuf).
 
 The enum mapping strategy assumes that Google's enum value naming scheme is used, as described
 here: https://developers.google.com/protocol-buffers/docs/style#enum
