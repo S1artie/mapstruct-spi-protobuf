@@ -1,7 +1,8 @@
 # Mapstruct SPI implementation for protocol buffers mapping
 
-![Maven Central Version](https://img.shields.io/maven-central/v/de.firehead/mapstruct-spi-protobuf)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/S1artie/mapstruct-spi-protobuf/maven.yml)
+![Maven Central Version](https://img.shields.io/maven-central/v/de.firehead/mapstruct-spi-protobuf?link=https%3A%2F%2Fsearch.maven.org%2Fartifact%2Fde.firehead%2Fmapstruct-spi-protobuf)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/S1artie/mapstruct-spi-protobuf/maven.yml?link=https%3A%2F%2Fgithub.com%2FS1artie%2Fmapstruct-spi-protobuf%2Factions)
+
 
 
 This project provides a SPI implementation for [Mapstruct](http://mapstruct.org/) to generate mapping code from protocol
