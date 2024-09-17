@@ -16,7 +16,7 @@ Unit tests exist to validate all of these mappings. The SPI implementation requi
 and **Java 1.8+** (of course if you want to map to records, Java 14+ is required).
 
 This SPI implementation is released under the MIT license, built on GitHub and available on [Maven Central](https://search.maven.org/artifact/de.firehead/mapstruct-spi-protobuf).
-Note that it's a different implementation than [entur/mapstruct-spi-protobuf](https://github.com/entur/mapstruct-spi-protobuf) which was reimplemented from scratch here in order to add explicit support for more mapping targets, particularly org.immutables and other protobufs.
+Note that it's a different implementation than [entur/mapstruct-spi-protobuf](https://github.com/entur/mapstruct-spi-protobuf); the protobuf mapping logic was reimplemented from scratch here with the goal of explicitly supporting more mapping targets, particularly org.immutables and other protobufs, both of which pose some unique challenges not properly handled by the entur plugin.
 
 The enum mapping strategy assumes that Google's enum value naming scheme is used, as described
 here: https://developers.google.com/protocol-buffers/docs/style#enum
