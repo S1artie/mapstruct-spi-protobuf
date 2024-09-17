@@ -12,10 +12,11 @@ buffer messages (in the form of protobuf-java objects) to the following targets:
 - Java records
 - other protobuf messages in the form of other protobuf-java objects (see caveat below!)
 
-Unit tests exist to validate all of these mappings. The SPI implementation requires **Mapstruct 1.6.0**
-and Java 1.8+ (of course if you want to map to records, Java 14+ is required).
+Unit tests exist to validate all of these mappings. The SPI implementation requires **Mapstruct 1.6.0+** 
+and **Java 1.8+** (of course if you want to map to records, Java 14+ is required).
 
 This SPI implementation is released under the MIT license, built on GitHub and available on [Maven Central](https://search.maven.org/artifact/de.firehead/mapstruct-spi-protobuf).
+Note that it's a different implementation than [entur/mapstruct-spi-protobuf](https://github.com/entur/mapstruct-spi-protobuf) which does a similar job, but was reimplemented from scratch to add support for more mapping targets, particularly org.immutables and other protobufs.
 
 The enum mapping strategy assumes that Google's enum value naming scheme is used, as described
 here: https://developers.google.com/protocol-buffers/docs/style#enum
@@ -45,7 +46,7 @@ Include the mapstruct dependency and the annotation processor in your Maven proj
     <dependency>
         <groupId>org.mapstruct</groupId>
         <artifactId>mapstruct</artifactId>
-        <version>1.6.0</version>
+        <version>1.6.2</version>
     </dependency>
 </dependencies>
 
@@ -72,7 +73,7 @@ Or for Gradle:
 
 ```java
 
-implementation"org.mapstruct:mapstruct:1.6.0"
+implementation"org.mapstruct:mapstruct:1.6.2"
 annotationProcessor"org.mapstruct:mapstruct-processor:1.6.0"
 annotationProcessor"de.firehead:mapstruct-spi-protobuf:1.1.0"
 
