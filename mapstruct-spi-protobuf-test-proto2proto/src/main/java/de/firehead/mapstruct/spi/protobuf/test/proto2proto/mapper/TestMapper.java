@@ -11,6 +11,7 @@ import com.google.protobuf.ByteString;
 import de.firehead.mapstruct.spi.protobuf.test.proto2proto.Proto2ProtoTestProtos;
 import de.firehead.mapstruct.spi.protobuf.test.protos.TestProtos;
 import org.mapstruct.CollectionMappingStrategy;
+import org.mapstruct.Condition;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -37,5 +38,10 @@ public abstract class TestMapper {
 
     protected ByteString mapByteArrayToByteString(byte[] byteArray) {
         return ByteString.copyFrom(byteArray);
+    }
+
+    @Condition
+    protected boolean isNotUnrecognized(com.google.protobuf.ProtocolMessageEnum aProtoEnum) {
+        return !"UNRECOGNIZED".equals(aProtoEnum.toString());
     }
 }

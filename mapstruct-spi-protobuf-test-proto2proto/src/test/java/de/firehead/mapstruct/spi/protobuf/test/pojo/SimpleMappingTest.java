@@ -71,4 +71,21 @@ public class SimpleMappingTest extends AbstractMappingTest {
         Assertions.assertEquals(Proto2ProtoTestProtos.OtherTestEnum.OTHER_TEST_ENUM_UNSPECIFIED, TestMapper.INSTANCE.mapEnumToOtherEnum(TestProtos.TestEnum.TEST_ENUM_UNSPECIFIED));
     }
 
+    @Test
+    public void testUnrecognizedEnumValue() {
+        Assertions.assertEquals(TestProtos.TestEnum.UNRECOGNIZED, TestMapper.INSTANCE.mapOtherEnumToEnum(Proto2ProtoTestProtos.OtherTestEnum.UNRECOGNIZED));
+        Assertions.assertEquals(Proto2ProtoTestProtos.OtherTestEnum.UNRECOGNIZED, TestMapper.INSTANCE.mapEnumToOtherEnum(TestProtos.TestEnum.UNRECOGNIZED));
+    }
+
+    @Test
+    public void testSimpleMappingProtoToOtherProtoWithUnrecognizedEnumValue() {
+        // This is expected to NOT throw an exception because we have
+        // a @Conditional defined in the mapping that skips setting the UNRECOGNIZED enum value...
+        final Proto2ProtoTestProtos.OtherTestProtoMessage mappedOtherProto = TestMapper.INSTANCE.mapTestProtoToOtherProto(TEST_PROTO_MESSAGE_WITH_UNRECOGNIZED_ENUM);
+
+        // ... but the UNRECOGNIZED value is expected to be mapped to _UNSPECIFIED in the target message, which is what
+        // automatically happens due to the @Conditional preventing the setter from being called.
+        Assertions.assertEquals(Proto2ProtoTestProtos.OtherTestEnum.OTHER_TEST_ENUM_UNSPECIFIED, mappedOtherProto.getEnumField());
+    }
+
 }

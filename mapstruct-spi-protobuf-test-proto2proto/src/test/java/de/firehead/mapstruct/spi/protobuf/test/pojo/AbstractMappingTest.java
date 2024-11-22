@@ -67,4 +67,9 @@ public abstract class AbstractMappingTest {
             .putEnumMapField("key2", Proto2ProtoTestProtos.OtherTestEnum.OTHER_TEST_ENUM_VALUE)
             .build();
 
+    protected static final TestProtos.TestProtoMessage TEST_PROTO_MESSAGE_WITH_UNRECOGNIZED_ENUM =
+            TestProtos.TestProtoMessage.newBuilder().mergeFrom(TEST_PROTO_MESSAGE)
+                    .setEnumFieldValue(4711) // An UNRECOGNIZED value
+                    .build();
+
 }
