@@ -50,6 +50,8 @@ public class TestObject {
 
     private TestEnum enumField;
 
+    private TestEnumWithoutPrefixes enumFieldWithoutPrefixes;
+
     private java.util.Map<String, String> stringMapField;
 
     private java.util.Map<String, Integer> intMapField;
@@ -128,6 +130,14 @@ public class TestObject {
 
     public void setEnumField(TestEnum enumField) {
         this.enumField = enumField;
+    }
+
+    public TestEnumWithoutPrefixes getEnumFieldWithoutPrefixes() {
+        return enumFieldWithoutPrefixes;
+    }
+
+    public void setEnumFieldWithoutPrefixes(TestEnumWithoutPrefixes enumFieldWithoutPrefixes) {
+        this.enumFieldWithoutPrefixes = enumFieldWithoutPrefixes;
     }
 
     public Map<String, String> getStringMapField() {

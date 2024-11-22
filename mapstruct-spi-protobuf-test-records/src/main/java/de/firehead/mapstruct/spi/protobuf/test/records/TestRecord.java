@@ -22,18 +22,20 @@ import java.util.Map;
  * bool booleanField = 6;
  * bytes bytesField = 7;
  * TestEnum enumField = 8;
- * map<string, string> stringMapField = 9;
- * map<string, int32> intMapField = 10;
- * map<string, int64> longMapField = 11;
- * map<string, float> floatMapField = 12;
- * map<string, double> doubleMapField = 13;
- * map<string, bool> boolMapField = 14;
- * map<string, bytes> bytesMapField = 15;
- * map<string, TestEnum> enumMapField = 16;
+ * TestEnumWithoutPrefixes enumWithoutPrefixesField = 9;
+ * map<string, string> stringMapField = 10;
+ * map<string, int32> intMapField = 11;
+ * map<string, int64> longMapField = 12;
+ * map<string, float> floatMapField = 13;
+ * map<string, double> doubleMapField = 14;
+ * map<string, bool> boolMapField = 15;
+ * map<string, bytes> bytesMapField = 16;
+ * map<string, TestEnum> enumMapField = 17;
  * }
  */
 public record TestRecord(String stringField, int intField, long longField, float floatField, double doubleField,
                          boolean booleanField, byte[] bytesField, TestEnum enumField,
+                         TestEnumWithoutPrefixes enumWithoutPrefixesField,
                          Map<String, String> stringMapField,
                          Map<String, Integer> intMapField, Map<String, Long> longMapField,
                          Map<String, Float> floatMapField,

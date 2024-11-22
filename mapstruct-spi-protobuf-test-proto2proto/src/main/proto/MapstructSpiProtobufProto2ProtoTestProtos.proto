@@ -12,14 +12,15 @@ message OtherTestProtoMessage {
   bool booleanField = 6;
   bytes bytesField = 7;
   OtherTestEnum enumField = 8;
-  map<string, string> stringMapField = 9;
-  map<string, int32> intMapField = 10;
-  map<string, int64> longMapField = 11;
-  map<string, float> floatMapField = 12;
-  map<string, double> doubleMapField = 13;
-  map<string, bool> boolMapField = 14;
-  map<string, bytes> bytesMapField = 15;
-  map<string, OtherTestEnum> enumMapField = 16;
+  OtherTestEnumWithoutPrefixes enumWithoutPrefixesField = 9;
+  map<string, string> stringMapField = 10;
+  map<string, int32> intMapField = 11;
+  map<string, int64> longMapField = 12;
+  map<string, float> floatMapField = 13;
+  map<string, double> doubleMapField = 14;
+  map<string, bool> boolMapField = 15;
+  map<string, bytes> bytesMapField = 16;
+  map<string, OtherTestEnum> enumMapField = 17;
 }
 
 message OtherDeepTestProtoMessage {
@@ -31,4 +32,9 @@ message OtherDeepTestProtoMessage {
 enum OtherTestEnum {
   OTHER_TEST_ENUM_UNSPECIFIED = 0;
   OTHER_TEST_ENUM_VALUE = 1;
+}
+
+enum OtherTestEnumWithoutPrefixes {
+  OTHER_TEST_ENUM_WITHOUT_PREFIXES_UNSPECIFIED = 0;
+  VALUE = 1;
 }

@@ -51,6 +51,8 @@ public interface TestImmutableObject {
 
     TestEnum getEnumField();
 
+    TestEnumWithoutPrefixes getEnumWithoutPrefixesField();
+
     java.util.Map<String, String> getStringMapField();
 
     java.util.Map<String, Integer> getIntMapField();

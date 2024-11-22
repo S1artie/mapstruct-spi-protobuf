@@ -26,6 +26,7 @@ public class SimpleMappingTest extends AbstractMappingTest {
         Assertions.assertEquals(TEST_OBJECT.getBooleanField(), mappedPojo.getBooleanField());
         Assertions.assertArrayEquals(TEST_OBJECT.getBytesField(), mappedPojo.getBytesField());
         Assertions.assertEquals(TEST_OBJECT.getEnumField(), mappedPojo.getEnumField());
+        Assertions.assertEquals(TEST_OBJECT.getEnumFieldWithoutPrefixes(), mappedPojo.getEnumFieldWithoutPrefixes());
         Assertions.assertEquals(TEST_OBJECT.getStringMapField(), mappedPojo.getStringMapField());
         Assertions.assertEquals(TEST_OBJECT.getIntMapField(), mappedPojo.getIntMapField());
         Assertions.assertEquals(TEST_OBJECT.getLongMapField(), mappedPojo.getLongMapField());
@@ -51,6 +52,7 @@ public class SimpleMappingTest extends AbstractMappingTest {
         Assertions.assertEquals(TEST_PROTO_MESSAGE.getBooleanField(), mappedProto.getBooleanField());
         Assertions.assertArrayEquals(TEST_PROTO_MESSAGE.getBytesField().toByteArray(), mappedProto.getBytesField().toByteArray());
         Assertions.assertEquals(TEST_PROTO_MESSAGE.getEnumField(), mappedProto.getEnumField());
+        Assertions.assertEquals(TEST_PROTO_MESSAGE.getEnumWithoutPrefixesField(), mappedProto.getEnumWithoutPrefixesField());
         Assertions.assertEquals(TEST_PROTO_MESSAGE.getStringMapFieldMap(), mappedProto.getStringMapFieldMap());
         Assertions.assertEquals(TEST_PROTO_MESSAGE.getIntMapFieldMap(), mappedProto.getIntMapFieldMap());
         Assertions.assertEquals(TEST_PROTO_MESSAGE.getLongMapFieldMap(), mappedProto.getLongMapFieldMap());
